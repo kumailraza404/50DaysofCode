@@ -54,16 +54,13 @@ var removeElement = function (nums, val) {
  * @return {number}
  */
 var removeDuplicates = function (nums) {
-  let count = 0;
-  // Loop for all the elements in the array
-  for (let i = 0; i < nums.length; i++) {
-    // If the current element is equal to the next element, we skip
+  let temp = 0;
+  for (i = 0; i < nums.length; i++) {
     if (nums[i] == nums[i + 1]) {
       continue;
     }
-    // We will update the array in place
-    nums[count] = nums[i];
-    count++;
+    nums[temp] = nums[i];
+    temp++;
   }
-  return count;
+  return temp;
 };
