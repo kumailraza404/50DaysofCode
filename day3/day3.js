@@ -186,3 +186,18 @@ var thirdMax = function (nums) {
 
   return Math.min(...maxArray);
 };
+
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var findDisappearedNumbers = function (nums) {
+  tempArray = [];
+
+  for (i = 1; i <= nums.length; i++) {
+    if (!nums.includes(i)) {
+      tempArray.push(i);
+    }
+  }
+  return tempArray;
+};
