@@ -1,23 +1,35 @@
 /**
- * @param {string[]} strs
- * @return {string}
+ * @param {character[]} s
+ * @return {void} Do not return anything, modify s in-place instead.
  */
-var longestCommonPrefix = function (strs) {
-  let i = 0;
-
-  while (i < strs[0].length) {
-    if (!strs.every((str) => str[i] === strs[0][i])) break;
-    i++;
-  }
-
-  if (i == 0) return "";
-  return strs[0].slice(0, i);
+var reverseString = function (s) {
+  s.split("").reverse().join("");
 };
 
 const input1 = ["flower", "flow", "flight"];
 
 const input2 = ["dog", "racecar", "car"];
 
-const ans = longestCommonPrefix(input1);
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {void} Do not return anything, modify nums in-place instead.
+ */
+var rotate = function (nums, k) {
+  
+
+    let arr = nums.splice(nums.length - k);
+  console.log(nums);
+  console.log(arr);
+
+  
+
+  for (var i = arr.length - 1; i >= 0; i--) {
+    nums.unshift(arr[i]);
+  }
+  return nums;
+};
+
+let ans = rotate([1, 2, 3, 4, 5, 6, 7], 3);
 
 console.log(ans);
